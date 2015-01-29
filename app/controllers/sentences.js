@@ -18,7 +18,6 @@ router.get('/:sentence/', function (req, res, next) {
       A.setTopic(B);
       A.getTopic().then(function(_B){
         _B.getDescriptions().then(function(_A){
-          console.log(_A);
         });
       });
     });

@@ -12,10 +12,12 @@ module.exports = function (sequelize, DataTypes) {
       associate: function (models) {
         Sentence.belongsTo(Sentence, {as: 'Topic', foreignKey:'TopicId'});
         Sentence.belongsTo(Sentence, {as: 'Subject', foreignKey:'SubjectId'});
+        Sentence.belongsTo(Sentence, {as: 'Antecedent', foreignKey:'AntecedentId'});
         Sentence.belongsTo(Sentence, {as: 'Prototype', foreignKey:'PrototypeId'});
 
-        Sentence.hasMany(Sentence, {as: 'Descriptions', foreignKey: 'TopicId'});
-        Sentence.hasMany(Sentence, {as: 'Interpretations', foreignKey: 'SubjectId'});
+        Sentence.hasMany(Sentence, {as: 'Examples', foreignKey: 'TopicId'});
+        Sentence.hasMany(Sentence, {as: 'Descriptions', foreignKey: 'SubjectId'});
+        Sentence.hasMany(Sentence, {as: 'Consequents', foreignKey: 'AntecedentId'});
         Sentence.hasMany(Sentence, {as: 'Instances', foreignKey: 'PrototypeId'});
       }
     },
