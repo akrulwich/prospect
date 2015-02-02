@@ -26,10 +26,9 @@ module.exports = function (sequelize, DataTypes) {
       // how: function(){ return this.getExamples() },
       // why: function(){ return this.getDescriptions() },
       // getDescriptions:
-      // getExamples
-      // getConsequents
-      // getInstances
-      // etc
+      // getExamples:
+      // getConsequents:
+      // getInstances:
       "getTextAsSlug": function(){}
     }
   });
