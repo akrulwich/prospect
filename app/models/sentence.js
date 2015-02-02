@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         Sentence.belongsTo(Sentence, {as: 'Topic', foreignKey:'TopicId'});
         Sentence.belongsTo(Sentence, {as: 'Antecedent', foreignKey:'AntecedentId'});
         Sentence.belongsTo(Sentence, {as: 'Prototype', foreignKey:'PrototypeId'});
-        Sentence.belongsTo(Sentence, {as: 'Argument', foreignKey:'ArgumentId'});
+        Sentence.belongsTo(Sentence, {as: 'Object', foreignKey:'ObjectId'});
       }
     },
     classMethods: {
