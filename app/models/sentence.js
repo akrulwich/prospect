@@ -10,7 +10,6 @@ module.exports = function (sequelize, DataTypes) {
       associate: function (models) {
         Sentence.belongsTo(Sentence, {as: 'Subject', foreignKey:'SubjectId'});
         Sentence.belongsTo(Sentence, {as: 'Topic', foreignKey:'TopicId'});
-        Sentence.belongsTo(Sentence, {as: 'Antecedent', foreignKey:'AntecedentId'});
         Sentence.belongsTo(Sentence, {as: 'Prototype', foreignKey:'PrototypeId'});
         Sentence.belongsTo(Sentence, {as: 'Object', foreignKey:'ObjectId'});
       }

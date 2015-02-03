@@ -6,7 +6,7 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
-router.get('/:slug/', function (req, res, next) {
+router.get('/:slug/:relation', function (req, res, next) {
   var N = req.query.N || 1;
   var relation = req.params.relation;
   var sentence = req.params.slug;
