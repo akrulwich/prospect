@@ -6,9 +6,11 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
-router.get('/:sentence/', function (req, res, next) {
-  console.log(req.path);
-  
+router.get('/:slug/', function (req, res, next) {
+  var N = req.query.N || 1;
+  var relation = req.params.relation;
+  var sentence = req.params.slug;
+
   // db.Sentence.create({
   //   text: 'Sentence A',
   // }).complete(function(err, A){

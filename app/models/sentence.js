@@ -4,7 +4,7 @@
 module.exports = function (sequelize, DataTypes) {
 
   var Sentence = sequelize.define('Sentence', {
-    'text': DataTypes.TEXT,
+    'text': {type: DataTypes.TEXT, unique: true}
   }, {
     classMethods: {
       associate: function (models) {
@@ -16,19 +16,9 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     classMethods: {
-      convertSlugToText: function(){},
-      ofSubject: function(){},
-      ofTopic: function(){},
-      ofAntecedent: function(){},
-      ofPrototype: function(){}
+      convertSlugToText: function(slug){}
     },
     instanceMethods: {
-      // how: function(){ return this.getExamples() },
-      // why: function(){ return this.getDescriptions() },
-      // getDescriptions:
-      // getExamples:
-      // getConsequents:
-      // getInstances:
       "getTextAsSlug": function(){}
     }
   });
