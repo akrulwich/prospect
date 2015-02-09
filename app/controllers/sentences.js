@@ -1,26 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models');
+var Sentence = db.Sentence;
 
 module.exports = function (app) {
   app.use('/', router);
 };
 
-router.get('/:slug/', function (req, res, next) {
-
-  // db.Sentence.create({
-  //   text: 'Sentence A',
-  // }).complete(function(err, A){
-  //   db.Sentence.create({
-  //     text: 'Sentence B',
-  //   }).complete(function(err, B){
-  //     A.setTopic(B);
-  //     A.getTopic().then(function(_B){
-  //       _B.getDescriptions().then(function(_A){
-  //       });
-  //     });
-  //   });
-  // });
-
-  res.send('');
+router.get('/', function (req, res, next) {
+  var queryOptions = {};
+  Sentence.findAll({ where: queryOptions}).then(function(sentences) {
+    res.send(JSON.stringify(sentences));
+  })
 });
